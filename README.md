@@ -86,13 +86,13 @@ estimator — are defined once in `thesis_config.py`.
 
 | Thesis | Notebook |
 |---|---|
-| Section 3.2, Table 1 (attrition), Table 3 (fund summary statistics) | NB01 |
+| Section 3.2, Table 1 (attrition), Table 3 (fund summary statistics), cash-weight statistics and coverage figure (Figure A1) | NB01 |
 | Sections 3.4–3.5, Table 2 (factor statistics) | NB02 |
 | Section 4.1 (passive benchmark alpha), 4.3 (benchmark coverage) | NB05 |
 | Section 5.1 (conventional alpha), 5.3 headline Δα̂, Figure 3 | NB06 |
 | Section 5.2, Figure 1 (Stage 1a) | NB04 |
 | Section 5.3: Table 4 (correction magnitude) | NB05 |
-| Section 5.3: Tables 5–6, Figure 2 (mechanism) | NB07 |
+| Section 5.3: Tables 5–6, Figure 2 (mechanism, with a worked example of the units), cash weight in the estimation sample | NB07 |
 | Section 5.4.1 (EW vs VW), 5.4.2 (alternative cash instrument) | NB05 |
 | Sections 5.4.3–5.4.5, Tables 7–8 | NB07 |
 | Sections 4.5, 5.5, 5.6, 6.1 (PCA), Figures 4–6 | NB08 |
@@ -119,6 +119,12 @@ free memory when it parses the SAS files.
 | Running interactively | Open the notebooks in Jupyter or VS Code, select the `.venv` kernel and use *Restart → Run All* in order 01 → 08. Set `DATA_ROOT` in `thesis_config.py` first. |
 
 ## 6. Notes for the reader
+
+- **Net returns.** CRSP returns are net of expense ratios and 12b-1 fees (loads are not deducted; CRSP MFDB Guide,
+  ch. 2, p. 6). All alphas, including Δα̂, are net-of-fee alphas. The passive benchmark is likewise built from index
+  funds' net returns.
+- **Units.** Alphas, the return gain (+0.188) and the beta penalty (0.205) are in percentage points per year
+  (monthly decimal × 1200). NB07 prints a worked example for the average fund.
 
 - **Table 7, first row (n = 1,949 vs. 1,950).** One fund met the 60-consecutive-month screen in NB01 before step 9
   (removal of pre-July-2003 months of funds later flagged as index funds) shortened its history. It stays in the

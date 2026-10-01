@@ -100,6 +100,16 @@ def read_sas_cached(fname, columns=None):
     return pd.read_parquet(pq, columns=columns)
 
 
+def describe_cash(s):
+    """Descriptive statistics of a cash-weight series in percent (per_cash_clean), missing values dropped."""
+    s = pd.Series(s).dropna()
+    q = s.quantile([.01, .05, .10, .25, .50, .75, .90, .95, .99])
+    return pd.Series({"N": s.size, "mean": s.mean(), "sd": s.std(), "min": s.min(),
+                      **{f"p{round(k * 100)}": v for k, v in q.items()}, "max": s.max(),
+                      "% < 0": (s < 0).mean() * 100, "% = 0": (s == 0).mean() * 100,
+                      "% > 5": (s > 5).mean() * 100, "% > 10": (s > 10).mean() * 100})
+
+
 # ── Estimation helpers ───────────────────────────────────────────────────────
 def max_consecutive_run(dates):
     """Length of the longest run of consecutive calendar months in `dates`."""
