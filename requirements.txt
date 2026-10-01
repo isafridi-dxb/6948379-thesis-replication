@@ -1,0 +1,11 @@
+# Equivalence-tested (synthetic data) with pandas 2.3, numpy 2.4.4, scipy 1.17.1, statsmodels 0.15.0. Each notebook prints the versions it ran with.
+pandas>=2.0,<3.0
+numpy
+scipy
+statsmodels
+matplotlib
+pyarrow
+pyreadstat
+jupyter
+nbclient
+ipykernel

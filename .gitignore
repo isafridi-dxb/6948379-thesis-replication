@@ -1,0 +1,5 @@
+__pycache__/
+executed/
+.venv/
+.DS_Store
+*.parquet
