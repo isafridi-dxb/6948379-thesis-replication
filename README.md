@@ -7,7 +7,7 @@ checked automatically against the value printed in the thesis; a notebook stops 
 
 ---
 
-## Quick start (macOS / Linux, about 30–60 minutes the first time)
+## Quick start (macOS / Linux)
 
 ```bash
 # 1. Download the code and go into its folder
